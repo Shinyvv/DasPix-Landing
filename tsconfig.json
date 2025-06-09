@@ -1,5 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strict": true
+    // Aquí puedes añadir otras opciones del compilador si las necesitas
+  },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
 }
