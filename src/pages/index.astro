@@ -1,0 +1,151 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>DasPix - Servicios de Desarrollo Web moderno</title>
+    <meta name="description" content="Professional web development services including custom websites, e-commerce solutions, UI/UX design, and digital marketing. Transform your digital presence with DasPix." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="keywords" content="web development,desarrollow web, paginas web, pagina online, empresa de paginas, pagar para una pagina, web design, e-commerce, UI/UX design, digital marketing, responsive websites">
+    <meta name="author" content="DasPix">
+    <meta property="og:title" content="DasPix - Servicios de Desarrollo Web moderno">
+    <meta property="og:description" content="Professional web development services that transform your digital presence">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+  </head>
+  <body class="font-sans antialiased">
+    <Navigation />
+    <main>
+      <Hero />
+      <Services />
+      <Portfolio />
+      <About />
+      <Testimonials />
+      <Contact />
+    </main>
+    <Footer />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        overflow-x: hidden;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #3577EF;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #F57070;
+      }
+
+      /* Intersection Observer animations */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+      }
+
+      .animate-on-scroll.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.addEventListener('DOMContentLoaded', () => {
+        const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card');
+        animateElements.forEach(el => {
+          el.classList.add('animate-on-scroll');
+          observer.observe(el);
+        });
+      });
+
+      // Form submission handler
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.firstName || !data.lastName || !data.email || !data.message) {
+              alert('Please fill in all required fields.');
+              return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+              alert('Please enter a valid email address.');
+              return;
+            }
+            
+            // Simulate form submission
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+              alert('Thank you for your message! We\'ll get back to you soon.');
+              form.reset();
+              submitButton.textContent = originalText;
+              submitButton.disabled = false;
+            }, 2000);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

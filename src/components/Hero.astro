@@ -1,0 +1,47 @@
+---
+---
+
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-blue via-primary-coral to-primary-yellow">
+  <!-- Fondo animado (sin cambios) -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-32 h-32 bg-white/15 rounded-full blur-2xl animate-float" style="animation-delay: -1.5s;"></div>
+  </div>
+
+  <!-- Contenedor principal - Añadido padding vertical -->
+  <div class="container mx-auto px-4 py-16 md:py-0 text-center relative z-10"> <!-- ① py-16 para móviles -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Logo con margen superior ajustado -->
+      <div class="flex justify-center mb-8 md:mb-4 mt-8 md:mt-0 animate-fade-in"> <!-- ② mt-8 en móviles -->
+        <img src="/public/DasPix.png" alt="Logo" class="h-32 md:h-48 w-auto"> <!-- ③ Tamaño reducido -->
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 animate-fade-in">
+        Creando
+        <span class="block text-primary-cream">Experiencias Digitales</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up">
+        Hacemos de tu visión un increíble sitio web de alto rendimiento.
+      </p>
+      
+      <!-- Contenedor de botones con margen inferior -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up mb-16 sm:mb-8" style="animation-delay: 0.3s;"> <!-- ④ mb-16 en móviles -->
+        <a href="#portfolio" class="bg-white text-primary-blue px-8 py-4 rounded-full font-semibold hover:bg-primary-cream transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Échale un vistazo a nuestro trabajo
+        </a>
+        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-blue transition-all duration-300 transform hover:scale-105">
+          Empieza tu proyecto
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator reposicionado -->
+  <div class="absolute bottom-10 :bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce"> <!-- ⑤ bottom-24 en móviles -->
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
