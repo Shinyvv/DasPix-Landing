@@ -1,0 +1,177 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Términos y Condiciones - DasPix";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{title}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Meta Tags -->
+    <meta name="keywords" content="términos y condiciones, DasPix, desarrollo web">
+    <meta name="author" content="DasPix">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content="Términos y condiciones de servicios de DasPix">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+  </head>
+  <body class="font-sans antialiased">
+    <Navigation />
+    <main>
+      <!-- Aquí va el contenido del PDF que te proporcioné anteriormente -->
+      <section class="min-h-screen bg-gradient-to-br from-dark-900 to-dark-800 text-white py-20">
+        <div class="container mx-auto px-4">
+          <!-- Header -->
+          <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+              Términos y Condiciones
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+              Consulta nuestros términos y condiciones de servicio actualizados a junio de 2025.
+            </p>
+          </div>
+
+          <!-- PDF Viewer Container -->
+          <div class="max-w-6xl mx-auto bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
+            <!-- PDF Controls -->
+            <div class="bg-white/5 border-b border-white/10 p-4 flex flex-wrap items-center justify-between gap-4">
+              <div class="flex items-center space-x-4">
+                <h2 class="text-lg font-semibold text-white">
+                  Términos y Condiciones DasPix - Junio 2025
+                </h2>
+              </div>
+              
+              <div class="flex items-center space-x-3">
+                <!-- Download Button -->
+                <a 
+                  href="/Terminos_y_Condiciones_DasPix___Junio_2025.pdf" 
+                  download
+                  class="inline-flex items-center px-4 py-2 bg-primary-blue hover:bg-primary-coral text-white rounded-lg transition-colors duration-300 text-sm font-medium"
+                >
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  Descargar PDF
+                </a>
+                
+                <!-- Open in New Tab Button -->
+                <a 
+                  href="/Terminos_y_Condiciones_DasPix___Junio_2025.pdf" 
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 bg-primary-coral hover:bg-primary-yellow text-white rounded-lg transition-colors duration-300 text-sm font-medium"
+                >
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                  Abrir en Nueva Pestaña
+                </a>
+              </div>
+            </div>
+
+            <!-- PDF Embed -->
+            <div class="relative bg-white">
+              <object 
+                data="/Terminos_y_Condiciones_DasPix___Junio_2025.pdf#view=FitH" 
+                type="application/pdf" 
+                class="w-full h-[800px] md:h-[900px] lg:h-[1000px]"
+                id="pdfObject"
+              >
+                <!-- Fallback -->
+                <div class="flex flex-col items-center justify-center h-96 bg-gray-100 text-gray-800">
+                  <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <h3 class="text-xl font-semibold mb-2">No se puede mostrar el PDF</h3>
+                  <p class="text-gray-600 text-center mb-4 max-w-md">
+                    Tu navegador no puede mostrar archivos PDF. Puedes descargar el archivo o abrirlo en una nueva pestaña.
+                  </p>
+                  <div class="flex space-x-3">
+                    <a 
+                      href="/Terminos_y_Condiciones_DasPix___Junio_2025.pdf" 
+                      download
+                      class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300"
+                    >
+                      Descargar
+                    </a>
+                    <a 
+                      href="/Terminos_y_Condiciones_DasPix___Junio_2025.pdf" 
+                      target="_blank"
+                      class="inline-flex items-center px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors duration-300"
+                    >
+                      Abrir en Nueva Pestaña
+                    </a>
+                  </div>
+                </div>
+              </object>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="bg-white/5 border-t border-white/10 p-4">
+              <div class="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-400">
+                <p>
+                  <strong>Última actualización:</strong> Junio 2025
+                </p>
+                <p>
+                  ¿Tienes preguntas? <a href="/#contact" class="text-primary-yellow hover:text-primary-coral transition-colors">Contáctanos</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back to Home Button -->
+          <div class="text-center mt-12">
+            <a 
+              href="/"
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-blue to-primary-coral hover:from-primary-coral hover:to-primary-yellow text-white rounded-lg transition-all duration-300 font-medium transform hover:scale-105"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              Volver al Inicio
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        overflow-x: hidden;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #3577EF;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #F57070;
+      }
+    </style>
+  </body>
+</html>

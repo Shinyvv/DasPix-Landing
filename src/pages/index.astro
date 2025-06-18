@@ -107,67 +107,6 @@ import Footer from '../components/Footer.astro';
           }
         });
       }, observerOptions);
-
-      // Observe elements for animation
-      document.addEventListener('DOMContentLoaded', () => {
-        const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card');
-        animateElements.forEach(el => {
-          el.classList.add('animate-on-scroll');
-          observer.observe(el);
-        });
-      });
-
-      
-
-      // Form submission handler
-      document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelector('form');
-        if (form) {
-          form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            // Cast values to string for validation
-            const firstName = String(data.firstName || '');
-            const lastName = String(data.lastName || '');
-            const email = String(data.email || '');
-            const message = String(data.message || '');
-
-            // Simple validation
-            if (!firstName || !lastName || !email || !message) {
-              alert('Porfavor ingresa tus datos en los campos requeridos.');
-              return;
-            }
-
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-              alert('Porfavor ingresa un email valido.');
-              return;
-            }
-
-            // Simulate form submission
-            const submitButton = form.querySelector('button[type="submit"]');
-            if (submitButton && submitButton instanceof HTMLButtonElement) {
-              const originalText = submitButton.textContent;
-              submitButton.textContent = 'Enviando...';
-              submitButton.disabled = true;
-
-              setTimeout(() => {
-                alert('¡Gracias por hablarnos! Te contactaremos los más pronto posible.');
-                form.reset();
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-              }, 2000);
-            }
-        }
-      )
-        }
-      });
     </script>
   </body>
 </html>
