@@ -1,6 +1,6 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
   // Solo permitir métodos POST
   if (event.httpMethod !== 'POST') {
     return {
@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
     }
 
     // Configura tu transporte de correo
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({ // createTransport es el método correcto
       service: 'gmail',
       auth: {
         user: 'daspix.contacto@gmail.com',
@@ -56,10 +56,10 @@ Mensaje: ${message}
     };
 
   } catch (error) {
-    console.log('Error:', error);
+    console.log('Error detallado:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error al enviar el mensaje.' })
+      body: JSON.stringify({ error: 'Hubo un problema al intentar enviar el correo.' })
     };
   }
 };
