@@ -1,7 +1,6 @@
 ---
 // Define title and description in the frontmatter based on your YAML structure
 const title = "DasPix - Servicios de Desarrollo Web moderno";
-const description = "Professional web development services including custom websites, e-commerce solutions, UI/UX design, and digital marketing."; // This is from your YAML structure
 
 // Imports
 import Navigation from '../components/Navigation.astro';
@@ -14,10 +13,10 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     
@@ -25,7 +24,7 @@ import Footer from '../components/Footer.astro';
     <title>{title}</title>
     
     {/* Use the specific description string from your provided HTML structure */}
-    <meta name="description" content="Professional web development services including custom websites, e-commerce solutions, UI/UX design, and digital marketing. Transform your digital presence with our solutions." />
+    <meta name="description" content="Entregamos" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,6 +117,8 @@ import Footer from '../components/Footer.astro';
         });
       });
 
+      
+
       // Form submission handler
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelector('form');
@@ -126,35 +127,45 @@ import Footer from '../components/Footer.astro';
             e.preventDefault();
             
             // Get form data
+            // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            
+
+            // Cast values to string for validation
+            const firstName = String(data.firstName || '');
+            const lastName = String(data.lastName || '');
+            const email = String(data.email || '');
+            const message = String(data.message || '');
+
             // Simple validation
-            if (!data.firstName || !data.lastName || !data.email || !data.message) {
-              alert('Please fill in all required fields.');
+            if (!firstName || !lastName || !email || !message) {
+              alert('Porfavor ingresa tus datos en los campos requeridos.');
               return;
             }
-            
+
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-              alert('Please enter a valid email address.');
+            if (!emailRegex.test(email)) {
+              alert('Porfavor ingresa un email valido.');
               return;
             }
-            
+
             // Simulate form submission
             const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-              alert('Thank you for your message! We\'ll get back to you soon.');
-              form.reset();
-              submitButton.textContent = originalText;
-              submitButton.disabled = false;
-            }, 2000);
-          });
+            if (submitButton && submitButton instanceof HTMLButtonElement) {
+              const originalText = submitButton.textContent;
+              submitButton.textContent = 'Enviando...';
+              submitButton.disabled = true;
+
+              setTimeout(() => {
+                alert('¡Gracias por hablarnos! Te contactaremos los más pronto posible.');
+                form.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+              }, 2000);
+            }
+        }
+      )
         }
       });
     </script>
