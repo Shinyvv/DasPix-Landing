@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.daspix.cl/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /.netlify/
+
+# Allow important pages
+Allow: /
+Allow: /terminos

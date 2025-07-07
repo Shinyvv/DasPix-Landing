@@ -1,6 +1,9 @@
 ---
-// Define title and description in the frontmatter based on your YAML structure
-const title = "DasPix - Servicios de Desarrollo Web moderno";
+// SEO optimizado
+const title = "DasPix - Desarrollo Web Profesional | Páginas Web Modernas y Responsivas";
+const description = "Creamos sitios web profesionales, modernos y optimizados. Desarrollo web, e-commerce, diseño UI/UX y marketing digital. Transforma tu presencia digital con DasPix.";
+const keywords = "desarrollo web, páginas web, diseño web, e-commerce, UI/UX, marketing digital, sitios web responsivos, desarrollo frontend, páginas web profesionales, diseño moderno";
+const canonicalURL = "https://www.daspix.cl";
 
 // Imports
 import Navigation from '../components/Navigation.astro';
@@ -20,29 +23,79 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     
-    {/* Use the title from frontmatter */}
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="DasPix" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
     
-    {/* Use the specific description string from your provided HTML structure */}
-    <meta name="description" content="Entregamos" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="DasPix" />
+    <meta property="og:image" content={`${canonicalURL}/DasPix.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${canonicalURL}/DasPix.png`} />
+    <meta name="twitter:site" content="@DasPix" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#3577EF" />
+    <meta name="msapplication-TileColor" content="#3577EF" />
+    <meta name="language" content="es" />
+    <meta name="geo.region" content="CL" />
+    <meta name="geo.placename" content="Chile" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/DasPix.png" as="image" />
+    <link rel="preload" href="/favicon.svg" as="image" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Additional Meta Tags from your existing file, with og:title using the frontmatter title -->
-    <meta name="keywords" content="web development,desarrollow web, paginas web, pagina online, empresa de paginas, pagar para una pagina, web design, e-commerce, UI/UX design, digital marketing, responsive websites">
-    <meta name="author" content="DasPix">
-    <meta property="og:title" content={title}>
-    {/* Use the specific og:description string from your provided HTML structure */}
-    <meta property="og:description" content="Professional web development services that transform your digital presence">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DasPix",
+        "url": "https://www.daspix.cl",
+        "logo": "https://www.daspix.cl/DasPix.png",
+        "description": "Empresa chilena especializada en desarrollo web profesional, diseño UI/UX y marketing digital",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CL"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+          "https://www.daspix.cl"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "category": "Desarrollo Web"
+        }
+      }
+    </script>
   </head>
   <body class="font-sans antialiased">
     <Navigation />
-    <main>
+    <main role="main">
       <Hero />
       <Services />
       <Portfolio />

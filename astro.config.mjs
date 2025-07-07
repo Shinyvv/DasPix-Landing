@@ -3,5 +3,10 @@ import tailwind from '@astrojs/tailwind'
 
 export default defineConfig({
   output: 'static',
-  integrations: [tailwind()]
+  site: 'https://www.daspix.cl',
+  integrations: [tailwind()],
+  compressHTML: true,
+  build: {
+    inlineStylesheets: 'auto'
+  }
 })
