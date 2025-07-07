@@ -49,6 +49,10 @@ import Footer from '../components/Footer.astro';
     <meta name="twitter:image" content={`${canonicalURL}/DasPix.png`} />
     <meta name="twitter:site" content="@DasPix" />
     
+    <!-- Brand/Logo Meta Tags -->
+    <meta property="og:logo" content={`${canonicalURL}/DasPix.png`} />
+    <meta name="msapplication-TileImage" content="/DasPix.png" />
+    
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#3577EF" />
     <meta name="msapplication-TileColor" content="#3577EF" />
@@ -65,6 +69,12 @@ import Footer from '../components/Footer.astro';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Favicon variations for better brand recognition -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/DasPix.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
       {
@@ -72,8 +82,18 @@ import Footer from '../components/Footer.astro';
         "@type": "Organization",
         "name": "DasPix",
         "url": "https://www.daspix.cl",
-        "logo": "https://www.daspix.cl/DasPix.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.daspix.cl/DasPix.png",
+          "width": "512",
+          "height": "512"
+        },
+        "image": "https://www.daspix.cl/DasPix.png",
         "description": "Empresa chilena especializada en desarrollo web profesional, diseño UI/UX y marketing digital",
+        "sameAs": [
+          "https://www.instagram.com/daspix",
+          "https://www.linkedin.com/company/daspix"
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "CL"

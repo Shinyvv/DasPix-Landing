@@ -1,0 +1,22 @@
+{
+  "name": "DasPix - Desarrollo Web Profesional",
+  "short_name": "DasPix",
+  "description": "Desarrollo web profesional, moderno y optimizado",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3577EF",
+  "icons": [
+    {
+      "src": "/DasPix.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
